@@ -2,6 +2,8 @@ public class Main {
     public static void main(String[] args) {
         InvertedIndex index = new InvertedIndex();
 
+        long startTime = System.nanoTime();
+
         // Legger til dokumenter
         String doc1 = "Java is fun and powerful, Java is also popular";
         String doc2 = "Java and data science";
@@ -10,6 +12,10 @@ public class Main {
         index.addToIndex("Doc1", doc1);
         index.addToIndex("Doc2", doc2);
         index.addToIndex("Doc3", doc3);
+
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+        System.out.println("Byggetid: " + duration + " ns");
 
         // Skriver ut hele indeksen
         System.out.println("\n=== Invertert indeks ===");
